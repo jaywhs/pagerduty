@@ -1,7 +1,7 @@
 <?php
 $ldapserver = 'ldap server name';
 $ldapport = '636';
-$access = array('username', 'password', 'ou=People,dc=zynga,dc=com', 'ou=Group,dc=zynga,dc=com');
+$access = array('username', 'password', 'ou=People,dc=enterdc,dc=com', 'ou=Group,dc=enterdc,dc=com');
 $attributes = array('cn', 'uid', 'uidNumber', 'loginShell', 'userPassword', 'sshPublicKey', 'pwdChangedTime', 'KeyPassword', 'groups', 'gidNumber', 'memberUid');
 
 $config = array(
@@ -9,7 +9,7 @@ $config = array(
 'port' => 636,
 'rollaccnt' => 'user',
 'rollaccntpw' => 'password',
-'DN' => 'dc=zynga,dc=com',
+'DN' => 'dc=enterdc,dc=com',
 'OUPeople' => 'People',
 'OUService' => 'service accounts',
 'OUGroup' => 'Group',

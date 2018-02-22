@@ -2,7 +2,7 @@
 
 <?php
 #-----------------------------------------------------------------------------------------------------------
-#Written by Jay Ramirez for Zynga, Inc.
+#Written by Jay Ramirez.
 #December 5, 2017
 #This script will pull a fresh list of users in pagerduty and compare the usernames to our uid in ldap
 #if the account is locked in ldap SRE will recieve an SRE ticket stating which user to remove from PagerDuty
@@ -19,7 +19,7 @@ $num_users = count ($curl_result['users']);//assigns a count for the numer of us
 
    for ($i=0; $i<$num_users; $i++) {
      $uid = $curl_result['users'][$i]['email'];
-     $ldap = preg_replace("^@zynga.com^","",$uid);
+     $ldap = preg_replace("^@domain.com^","",$uid);
      usleep (20000);
      ldap_user($config, $attributes, $ldap, 'Locked'); //shows users that email matches ldap tha are in a locked state
     }
@@ -32,7 +32,7 @@ $num_users = count ($curl_result['users']);
 
   for ($i=0; $i<$num_users; $i++) {
     $uid = $curl_result['users'][$i]['email'];
-    $ldap = preg_replace("^@zynga.com^","",$uid);
+    $ldap = preg_replace("^@domain.com^","",$uid);
     usleep(20000);
     ldap_user($config, $attributes, $ldap, 'Locked');
   }
@@ -45,7 +45,7 @@ $num_users = count ($curl_result['users']);
 
   for ($i=0; $i<$num_users; $i++) {
     $uid = $curl_result['users'][$i]['email'];
-    $ldap = preg_replace("^@zynga.com^","",$uid);
+    $ldap = preg_replace("^@domain.com^","",$uid);
     usleep(20000);
     ldap_user($config, $attributes, $ldap, 'Locked');
   }

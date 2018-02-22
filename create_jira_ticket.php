@@ -4,7 +4,7 @@ include("config_jira.php");
 
 function create_ticket()
 {
-  $jira["url"] = "https://jira.corp.zynga.com/rest/api/2/issue/";
+  $jira["url"] = "enter jira url";
   $data = array(
   'fields' => array('project' => array('key' => 'SRE',),
   'summary' => 'Please delete user'.$delete_users.'from PagerDuty: ',
